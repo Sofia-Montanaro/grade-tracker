@@ -1,13 +1,36 @@
 import matplotlib.pyplot as plt
 
+def chiedi_materia():
+    while True:
+        materia = input("Materia: ").strip()
+        if materia == "":
+            print("Errore: la materia non può essere vuota. Riprova.")
+        elif materia.lower() == "fine":
+            return "fine"
+        else:
+            return materia
+
+def chiedi_voto():
+    while True:
+        voto_str = input("Voto (0-10): ").strip()
+        try:
+            voto = float(voto_str)
+            if 0 <= voto <= 10:
+                return voto
+            else:
+                print("Errore: il voto deve essere tra 0 e 10. Riprova.")
+        except ValueError:
+            print("Errore: devi inserire un numero valido. Riprova.")
+
 voti = {}
 
 print("Inserisci le materie e i voti. Scrivi 'fine' per terminare.")
+
 while True:
-    materia = input("Materia: ")
+    materia = chiedi_materia()
     if materia.lower() == "fine":
         break
-    voto = float(input(f"Voto per {materia}: "))
+    voto = chiedi_voto()
     voti[materia] = voto
 
 if len(voti) == 0:
