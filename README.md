@@ -17,3 +17,9 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
+
+## Miglioramenti recenti
+
+- Aggiunta gestione degli errori per input materia e voto  
+- Controlli per evitare input vuoti o numeri fuori scala  
+- Messaggi chiari per aiutare l’utente a inserire dati corretti
